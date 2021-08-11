@@ -8,6 +8,7 @@ import { SandboxPageRoutingModule } from './sandbox-routing.module';
 
 import { SandboxPage } from './sandbox.page';
 import {TestlistComponent} from './testlist/testlist.component';
+import {InfoComponent} from './info/info.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import {TestlistComponent} from './testlist/testlist.component';
     IonicModule,
     SandboxPageRoutingModule
   ],
-  declarations: [SandboxPage, TestlistComponent]
+  declarations: [SandboxPage, TestlistComponent, InfoComponent]
 })
 export class SandboxPageModule {}

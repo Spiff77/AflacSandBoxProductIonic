@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProductPage } from './product.page';
+import {SimplelistproductComponent} from './simplelistproduct/simplelistproduct.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ProductPage
+    path: 'simplelist',
+    component: SimplelistproductComponent
   }
 ];
 

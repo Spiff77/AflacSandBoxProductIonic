@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Simple Product List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-xl="2" size-lg="3" size-md="4" size-sm="6" *ngFor="let i of [].constructor(30)">
+        <ion-card>
+          <img src="assets/shapes.svg" alt="A nice pic">
+          <ion-item>
+            <ion-icon slot="start" name="beer-outline"></ion-icon>
+            <ion-button slot="end">See more</ion-button>
+            <ion-label>FOOD</ion-label>
+
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title>Sushies</ion-card-title>
+            <ion-card-subtitle>Food</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam aperiam commodi, cupiditate dolorem earum enim eos error fuga illo incidunt inventore laboriosam natus omnis perferendis quia, recusandae sed voluptates.
+          </ion-card-content>
+          <ion-item>
+              <ion-button color="danger" slot="start" fill="outline">Delete</ion-button>
+              <ion-button slot="end" fill="outline">World</ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
