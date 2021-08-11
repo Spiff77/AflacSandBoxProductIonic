@@ -9,12 +9,16 @@ import {Product} from '../../../model/Product';
 })
 export class SimplelistproductComponent implements OnInit {
 
-  products: Product[] = [];
+  pagesize= 4;
+  currentpage= 1;
+
+  products: any[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
 
   constructor(private httpPL: ProductHttpService) { }
 
   async ngOnInit(): Promise<void> {
-    this.products = await this.httpPL.findAll();
+   // this.products = await this.httpPL.findAll();
   }
 
   async delete(id: number): Promise<void>{
@@ -22,4 +26,15 @@ export class SimplelistproductComponent implements OnInit {
     await this.ngOnInit();
   }
 
+  displayScale(){
+    const prods = this.products.filter( (id, i) => {
+      return i >= (this.currentpage * this.pagesize) && i < (this.pagesize * this.currentpage) + this.pagesize;
+    });
+    return prods;
+  }
+
+  setPage(n: number) {
+    this.currentpage += n;
+    console.log(this.currentpage)
+  }
 }

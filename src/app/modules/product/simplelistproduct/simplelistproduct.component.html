@@ -4,18 +4,23 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list>
-    <ion-item-sliding *ngFor="let p of products">
+  <ion-item>
+    <ion-button (click)="setPage(-1)">prev</ion-button>
+    <ion-button (click)="setPage(1)">next</ion-button>
+  </ion-item>
+  <ion-list class="ion-hide-sm-up">
+    <ion-item-sliding *ngFor="let p of displayScale(); let i = index  ">
       <ion-item>
         <ion-label>
-          <h3>{{p.name}}</h3>
-          <p>{{p.description}}</p>
+          <h3>{{p}}</h3>
+          <p>zef</p>
         </ion-label>
-        <ion-checkbox slot="start"></ion-checkbox>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="delete(p.id)">Delete</ion-item-option>
+        <ion-item-option color="danger" >Delete</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+
+
 </ion-content>
