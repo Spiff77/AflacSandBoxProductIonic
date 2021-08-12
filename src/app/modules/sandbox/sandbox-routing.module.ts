@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SandboxPage } from './sandbox.page';
 import {TestlistComponent} from './testlist/testlist.component';
 import {InfoComponent} from './info/info.component';
+import {ModalexampleComponent} from './modalexample/modalexample.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'info',
     component: InfoComponent
+  },
+  {
+    path: 'modal',
+    component: ModalexampleComponent
   }
 ];
 

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add a product</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" placeholder="Jean Reno"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Active?</ion-label>
+      <ion-checkbox formControlName="active" slot="end"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Category</ion-label>
+      <ion-input formControlName="category"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="number" formControlName="price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Promo</ion-label>
+      <ion-input type="number" formControlName="promo"></ion-input>
+    </ion-item>
+    <ion-item formGroupName="supplier" *ngIf="suppliers.length > 0">
+      <ion-label>Supplier</ion-label>
+      <ion-select formControlName="id" okText="Ok" cancelText="Nop" [value]="suppliers[0].id">
+        <ion-select-option [value]="s.id" *ngFor="let s of suppliers">{{s.companyName}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
+  <ion-item>
+    <ion-button (click)="closeModal('SAVE')">OK</ion-button>
+    <ion-button (click)="closeModal('CANCEL')">Cancel</ion-button>
+  </ion-item>
+</ion-content>
