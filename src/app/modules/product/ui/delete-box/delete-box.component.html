@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Removing a {{itemCategory}} :{{itemName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+  <p>You are about to remove a {{itemCategory}} named {{itemName}} with the id: {{itemId}}</p>
+  </ion-item>
+  <ion-item>
+    <ion-button color="danger" (click)="closeModal('DELETE')">Delete</ion-button>
+    <ion-button color="light" (click)="closeModal('CANCEL')">Cancel</ion-button>
+  </ion-item>
+</ion-content>

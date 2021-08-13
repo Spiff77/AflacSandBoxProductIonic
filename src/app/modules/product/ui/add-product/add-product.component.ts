@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ProductHttpService} from '../../../../product-http.service';
@@ -12,9 +12,11 @@ import {Supplier} from '../../../../model/Supplier';
 })
 export class AddProductComponent implements OnInit {
 
+  @Input() desc = '';
+  @Input() actionName ='';
+
   form: FormGroup;
   suppliers: Supplier[] = [];
-
 
   constructor(private modal: ModalController,
               private fb: FormBuilder,

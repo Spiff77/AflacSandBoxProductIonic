@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductHttpService} from '../../../product-http.service';
 import {Product} from '../../../model/Product';
-import {ModalController} from '@ionic/angular';
+import {AlertController, ModalController} from '@ionic/angular';
 import {AddProductComponent} from '../ui/add-product/add-product.component';
+import {DeleteBoxComponent} from '../ui/delete-box/delete-box.component';
 
 @Component({
   selector: 'app-simplelistproduct',
@@ -17,7 +18,9 @@ export class SimplelistproductComponent implements OnInit {
   products: Product[] = [];
 
 
-  constructor(private httpPL: ProductHttpService, private modal: ModalController) { }
+  constructor(private httpPL: ProductHttpService,
+              private modal: ModalController,
+              private alertController: AlertController) { }
 
   async ngOnInit(): Promise<void> {
     this.products = await this.httpPL.findAll();
@@ -41,7 +44,11 @@ export class SimplelistproductComponent implements OnInit {
 
   async openAddProductModal(): Promise<void> {
     const addmodal = await this.modal.create({
-      component: AddProductComponent
+      component: AddProductComponent,
+      componentProps: {
+        actionName: 'Add',
+        desc: 'Hello world, what\'s up?'
+      }
     });
     await addmodal.present();
 
@@ -50,6 +57,23 @@ export class SimplelistproductComponent implements OnInit {
     if(role === 'SAVE'){
       await this.httpPL.add(data);
       await this.ngOnInit();
+    }
+  }
+
+  async askForDelete(product: Product): Promise<void> {
+    const alert = await this.alertController.create({
+      header: 'Danger',
+      subHeader: 'Really, are you sure?',
+      message: `You are about to delete the product: ${product.name}`,
+      buttons: [{text: 'OK', role: 'ok'}, 'cancel']
+    });
+
+    await alert.present();
+
+    const {role} = await alert.onDidDismiss();
+    console.log(role);
+    if(role){
+      //delete
     }
   }
 }

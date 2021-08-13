@@ -1,3 +1,34 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="mymenu">
+  <ion-menu side="start" menuId="mymenu" contentId="mymenu">
+    <ion-header>
+      <ion-title>My menu</ion-title>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+        <ion-list-header>Products</ion-list-header>
+        <ion-item>
+          <ion-icon name="cube"></ion-icon>
+          <ion-label>Products list</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+        <ion-list-header>Sand Box</ion-list-header>
+        <ion-item>
+          <ion-icon name="cube"></ion-icon>
+          <ion-label>Something</ion-label>
+        </ion-item>
+          <ion-item [routerLink]="['sandbox', 'picture']">
+            <ion-icon name="camera"></ion-icon>
+            <ion-label>Picture</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="mymenu"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
