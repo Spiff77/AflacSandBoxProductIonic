@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28900719181",
+    "project_id": "aflacnotif",
+    "storage_bucket": "aflacnotif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28900719181:android:6e1481a40e31e46fc0fa04",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28900719181-gkhj69mlajsc9olosmb6eu5a6cmqbir8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAALhNvfWvXsCbXElWO2W6HjzIe1T63fE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28900719181-gkhj69mlajsc9olosmb6eu5a6cmqbir8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

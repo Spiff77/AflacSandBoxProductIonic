@@ -1,0 +1,33 @@
+:host ::ng-deep ion-icon {
+  font-size: 30px !important;
+}
+.icons div{
+  background-color:white;
+  border-radius: 30px;
+  width:30px;
+  height:30px;
+  position:relative;
+  display:inline-block;
+}
+.icons{
+  width:100px !important;
+  height:40px;
+  position: relative;
+}
+.icons div:nth-child(2){
+  left:-8px;
+}
+.icons div:nth-child(3){
+  left:-16px;
+}
+.icons div:nth-child(4){
+  left:-24px;
+}
+.avatar-icon{
+  position: relative;
+  top:28px;
+}
+ion-avatar, img{
+  max-height:70px;
+  max-width: 70px;
+}

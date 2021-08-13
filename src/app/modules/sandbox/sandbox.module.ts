@@ -13,14 +13,17 @@ import {ModalexampleComponent} from './modalexample/modalexample.component';
 import {CustommodalComponent} from './modalexample/custommodal/custommodal.component';
 import {PicturesComponent} from './pictures/pictures.component';
 import {SignpadComponent} from './signpad/signpad.component';
+import {AccountsComponent} from './accounts/accounts.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SandboxPageRoutingModule
+    SandboxPageRoutingModule,
+    FlexLayoutModule
   ],
-  declarations: [SandboxPage, TestlistComponent, InfoComponent, SignpadComponent, ModalexampleComponent, CustommodalComponent, PicturesComponent]
+  declarations: [SandboxPage, TestlistComponent, InfoComponent, SignpadComponent, ModalexampleComponent, CustommodalComponent, PicturesComponent, AccountsComponent]
 })
 export class SandboxPageModule {}
