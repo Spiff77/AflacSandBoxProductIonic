@@ -25,6 +25,14 @@
             <ion-icon name="camera"></ion-icon>
             <ion-label>Picture</ion-label>
           </ion-item>
+          <ion-item [routerLink]="['sandbox', 'testlist']">
+            <ion-icon name="cube"></ion-icon>
+            <ion-label>REST Persons</ion-label>
+          </ion-item>
+          <ion-item [routerLink]="['sandbox', 'testlist']" [queryParams]="{stored: true}">
+            <ion-icon name="cube"></ion-icon>
+            <ion-label>Stored Persons</ion-label>
+          </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>

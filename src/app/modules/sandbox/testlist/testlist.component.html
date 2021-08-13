@@ -4,27 +4,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-item>
+    <ion-label>Username:</ion-label>
+    <ion-input [(ngModel)]="pUserName"></ion-input>
+    <ion-button slot="end" (click)="addPerson()">ADD</ion-button>
+  </ion-item>
   <ion-list>
-    <ion-item (click)="showSheet()">
-      <ion-label>Queen</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Franck Zappa</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>ELP</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>AC/DC</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-
     <ion-item-sliding>
-      <ion-item>
-        <ion-label>Motorhead</ion-label>
-        <ion-checkbox slot="start"></ion-checkbox>
+      <ion-item *ngFor="let p of persons">
+        <ion-label>{{p.username}}</ion-label>
       </ion-item>
       <ion-item-options side="end">
         <ion-item-option color="success" (click)="callAction('FAV')">Fav</ion-item-option>

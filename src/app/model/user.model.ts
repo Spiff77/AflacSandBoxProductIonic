@@ -7,8 +7,9 @@ export class User{
               public token?: string ) {
   }
 
-  assignData(values: Partial<User>): void {
-    Object.assign(this, values);
+  assignData(values: Partial<User>): User {
+     Object.assign(this, values);
+     return this;
   }
 
 }
